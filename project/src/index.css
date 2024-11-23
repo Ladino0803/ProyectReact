@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #252525;
+  --text-primary: #e0e0e0;
+  --accent: #8b5cf6;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+.neumorphic {
+  background: var(--secondary-bg);
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px #151515,
+              -8px -8px 16px #353535;
+}
+
+.neumorphic-inset {
+  background: var(--secondary-bg);
+  border-radius: 20px;
+  box-shadow: inset 8px 8px 16px #151515,
+              inset -8px -8px 16px #353535;
+}
+
+.neumorphic-button {
+  background: var(--secondary-bg);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #151515,
+              -5px -5px 10px #353535;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 12px #151515,
+              -6px -6px 12px #353535;
+}
+
+.neumorphic-button:active {
+  transform: translateY(0);
+  box-shadow: inset 5px 5px 10px #151515,
+              inset -5px -5px 10px #353535;
+}
+
+/* Animaciones para las imágenes */
+.image-card {
+  transition: all 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Animaciones para los iconos sociales */
+.social-icon-link {
+  @apply neumorphic-button p-3 inline-flex items-center justify-center;
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Animación para el texto del navbar */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
